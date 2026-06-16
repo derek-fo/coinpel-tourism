@@ -10,7 +10,6 @@
 
     <nav class="bg-purple-900 text-white px-6 py-4 flex justify-between items-center shadow-md">
         <div class="flex items-center space-x-3">
-            <span class="text-2xl">🚌</span>
             <h1 class="text-xl font-bold tracking-wider uppercase">Coinpel Turismo</h1>
         </div>
         <div class="flex items-center space-x-4">
