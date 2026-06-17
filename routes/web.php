@@ -7,6 +7,11 @@ Route::get('/login', function () {
     return view('auth.login', ['step' => 'login']);
 });
 
+// rota dashboard
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
 // rota clientes
 Route::get('/clients', function () {
     $mockUsers = [
