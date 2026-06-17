@@ -7,9 +7,9 @@
 <body class="bg-gray-50 font-sans antialiased flex">
 
     <aside class="w-64 bg-purple-900 text-white min-h-screen p-6 flex flex-col justify-between">
-         <div>
-            <div class="flex items-center space-x-3 mb-10">
-                <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-8">
+        <div>
+            <div class="flex items-center justify-center space-x-5 mb-8">
+                <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-24">
             </div>
             <nav class="space-y-4 text-sm font-medium opacity-80">
                 <a href="#" class="block hover:opacity-100">Clientes</a>
@@ -17,6 +17,8 @@
                 <a href="#" class="block hover:opacity-100">Estatísticas</a>
                 <a href="#" class="block hover:opacity-100">Veículos</a>
                 <a href="#" class="block text-white opacity-100 font-bold bg-purple-800 -mx-6 px-6 py-2 border-l-4 border-l-orange-400">Viagens</a>
+                <a href="#" class="block hover:opacity-100">Contratos</a>
+                <a href="#" class="block hover:opacity-100">Pacotes</a>
             </nav>
         </div>
     </aside>
