@@ -11,11 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('users', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
         $table->id();
         $table->string('name');
         $table->string('email')->unique();
-        $table->string('password');
+        $table->string('birth_date');
+        $table->string('license_number'); // CNH
+        $table->string('cpf')->unique();
+        $table->string('pis');
+
+        $table->string('cep');
+        $table->string('street');
+        $table->string('number');
+        $table->string('city');
+        $table->string('state');
+
+        $table->string('photo')->nullable();
         $table->timestamps();
         });
     }
@@ -25,8 +36,6 @@ Schema::create('users', function (Blueprint $table) {
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('drivers');
     }
 };
