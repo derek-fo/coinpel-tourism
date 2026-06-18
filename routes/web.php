@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\DriverController;
 
 Route::get('/login', function () {
     return view('auth.login', ['step' => 'login']);
@@ -33,13 +34,8 @@ Route::get('/vehicles', function () {
 });
 
 // rota motoristas
-Route::get('/drivers', function () {
-    $mockDrivers = [
-        (object)['name' => 'Carlos Roberto', 'email' => 'carlos.r@gmail.com', 'photo' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'],
-        (object)['name' => 'Amanda Siqueira', 'email' => 'amanda.s@gmail.com', 'photo' => 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'],
-    ];
-    return view('admin.drivers', ['drivers' => $mockDrivers]);
-});
+Route::get('/drivers', [DriverController::class, 'index'])->name('drivers.index');
+Route::post('/drivers', [DriverController::class, 'store'])->name('drivers.store');
 
 // rota viagens
 Route::get('/trips', function () {

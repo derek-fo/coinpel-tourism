@@ -16,7 +16,7 @@
         <nav class="space-y-4 text-sm font-medium opacity-80">
             <a href="#" class="block text-white opacity-100 font-bold bg-purple-800 -mx-6 px-6 py-2 border-l-4 border-l-orange-400">Dashboard</a>
             <a href="#" class="block hover:opacity-100">Clientes</a>
-            <a href="#" class="block hover:opacity-100">Motoristas</a>
+            <a href="{{ route('drivers.index') }}" class="block hover:opacity-100">Motoristas</a>
             <a href="#" class="block hover:opacity-100">Estatísticas</a>
             <a href="#" class="block hover:opacity-100">Veículos</a>
             <a href="#" class="block hover:opacity-100">Viagens</a>
@@ -30,6 +30,12 @@
             <h2 class="text-2xl font-bold text-gray-800">Painel de Viagens</h2>
             <button class="bg-purple-900 text-white px-4 py-2 rounded font-bold text-sm">+ Nova Viagem</button>
         </header>
+
+        @if(session('success'))
+        <div class="mb-4 p-4 bg-green-100 text-green-800 rounded-lg font-bold text-sm">
+            {{ session('success') }}
+        </div>
+        @endif
 
         <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
             <h3 class="font-bold text-gray-700 mb-4 text-sm uppercase">Cadastrar Nova Viagem</h3>
