@@ -19,7 +19,7 @@
                 <a href="#" class="block hover:opacity-100">Clientes</a>
                 <a href="#" class="block text-white opacity-100 font-bold bg-purple-800 -mx-6 px-6 py-2 border-l-4 border-l-orange-400">Motoristas</a>
                 <a href="#" class="block hover:opacity-100">Estatísticas</a>
-                <a href="#" class="block hover:opacity-100">Veículos</a>
+                <a href="{{ route('vehicles.index') }}" class="block hover:opacity-100">Veículos</a>
                 <a href="#" class="block hover:opacity-100">Viagens</a>
                 <a href="#" class="block hover:opacity-100">Contratos</a>
                 <a href="#" class="block hover:opacity-100">Pacotes</a>
@@ -52,7 +52,7 @@
                 @foreach($drivers as $driver)
                 <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center justify-between hover:shadow-md transition">
                     <div class="flex items-center space-x-3">
-                        <img src="{{ $driver->photo }}" class="w-12 h-12 rounded-full object-cover border border-purple-200">
+                        <img src="{{ $driver->photo ?? 'https://ui-avatars.com/api/?name='.urlencode($driver->name).'&background=FAE8FF&color=581C87' }}" class="w-12 h-12 rounded-full object-cover border border-purple-200">
                         <div>
                             <h4 class="font-bold text-gray-800 text-sm">{{ $driver->name }}</h4>
                             <p class="text-xs text-gray-400">{{ $driver->email }}</p>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\VehicleController;
 
 Route::get('/login', function () {
     return view('auth.login', ['step' => 'login']);
@@ -25,13 +26,8 @@ Route::get('/clients', function () {
 });
 
 // rota veículos
-Route::get('/vehicles', function () {
-    $mockVehicles = [
-        (object)['prefix' => '202', 'plate' => 'IVS-2622', 'model' => 'Marcopolo', 'chassis' => 'Scania', 'type' => 'Ônibus', 'capacity' => '45', 'year' => '2006'],
-        (object)['prefix' => '203', 'plate' => 'IVS-2623', 'model' => 'Marcopolo', 'chassis' => 'Scania', 'type' => 'Ônibus', 'capacity' => '45', 'year' => '2007'],
-    ];
-    return view('admin.vehicles', ['vehicles' => $mockVehicles]);
-});
+Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
+Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
 
 // rota motoristas
 Route::get('/drivers', [DriverController::class, 'index'])->name('drivers.index');

@@ -18,7 +18,7 @@
             <a href="#" class="block hover:opacity-100">Clientes</a>
             <a href="{{ route('drivers.index') }}" class="block hover:opacity-100">Motoristas</a>
             <a href="#" class="block hover:opacity-100">Estatísticas</a>
-            <a href="#" class="block hover:opacity-100">Veículos</a>
+            <a href="{{ route('vehicles.index') }}" class="block hover:opacity-100">Veículos</a>
             <a href="#" class="block hover:opacity-100">Viagens</a>
             <a href="#" class="block hover:opacity-100">Contratos</a>
             <a href="#" class="block hover:opacity-100">Pacotes</a>
