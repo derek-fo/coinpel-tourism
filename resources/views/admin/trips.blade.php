@@ -12,6 +12,7 @@
                 <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-24">
             </div>
             <nav class="space-y-4 text-sm font-medium opacity-80">
+                <a href="#" class="block hover:opacity-100">Dashboard</a>
                 <a href="#" class="block hover:opacity-100">Clientes</a>
                 <a href="#" class="block hover:opacity-100">Motoristas</a>
                 <a href="#" class="block hover:opacity-100">Estatísticas</a>

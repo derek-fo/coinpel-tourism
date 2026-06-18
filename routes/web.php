@@ -2,15 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TripController;
 
 Route::get('/login', function () {
     return view('auth.login', ['step' => 'login']);
 });
 
 // rota dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', [App\Http\Controllers\TripController::class, 'index'])->name('dashboard'); // executar o index do tripcontroller ao entrar no dashboard
+
 
 // rota clientes
 Route::get('/clients', function () {
@@ -50,6 +50,8 @@ Route::get('/trips', function () {
     ];
     return view('admin.trips', ['trips' => $mockTrips]);
 });
+
+Route::post('/trips', [TripController::class, 'store'])->name('trips.store');
 
 Route::get('/', function () {
     return view('welcome');

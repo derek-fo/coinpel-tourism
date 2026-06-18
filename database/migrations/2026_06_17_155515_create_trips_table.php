@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
         $table->id();
-        $table->string('status');
         $table->string('name');
         $table->string('date');
         $table->string('time');
         $table->string('route');
         $table->integer('vehicle_id'); // relacionamento
         $table->integer('driver_id');  // relacionamento
+        $table->string('status');
         $table->string('rule');
         $table->timestamps();
         });
