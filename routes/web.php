@@ -9,12 +9,12 @@ use App\Http\Controllers\VehicleController;
 Route::get('/login', function () {
     return view('auth.login', ['step' => 'login']);
 });
+Route::post('/login', function () {
+    return redirect()->route('dashboard');
+});
 
-// rota dashboard
 Route::get('/dashboard', [App\Http\Controllers\TripController::class, 'index'])->name('dashboard'); // executar o index do tripcontroller ao entrar no dashboard
 
-
-// rota clientes
 Route::get('/clients', function () {
     $mockUsers = [
         (object)['name' => 'Maria Antônia da Silva', 'email' => 'M.Antonia@gmail.com'],
@@ -25,15 +25,12 @@ Route::get('/clients', function () {
     return view('admin.users', ['users' => $mockUsers]);
 });
 
-// rota veículos
 Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
 Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
 
-// rota motoristas
 Route::get('/drivers', [DriverController::class, 'index'])->name('drivers.index');
 Route::post('/drivers', [DriverController::class, 'store'])->name('drivers.store');
 
-// rota viagens
 Route::get('/trips', function () {
     $mockTrips = [
         (object)['status' => 'Em andamento', 'name' => 'Prova FURG', 'date' => '30/03/2021', 'time' => '15:00', 'route' => 'Pelotas > Rio grande', 'vehicle' => '202 - Ônibus', 'rule' => 'Faculdade', 'driver' => 'Carlos'],
@@ -46,5 +43,5 @@ Route::get('/trips', function () {
 Route::post('/trips', [TripController::class, 'store'])->name('trips.store');
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
