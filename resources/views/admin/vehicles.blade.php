@@ -7,23 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50 font-sans antialiased flex">
+<body class="bg-gray-50 font-sans antialiased flex flex-col md:flex-row min-h-screen">
 
-    <aside class="w-64 bg-purple-900 text-white min-h-screen p-6 flex flex-col justify-between">
-        <div>
-            <div class="flex items-center justify-center space-x-5 mb-8">
-                <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-24">
-            </div>
-            <nav class="space-y-4 text-sm font-medium opacity-80">
-                <a href="{{ route('dashboard') }}" class="block hover:opacity-100">Dashboard</a>
-                <a href="#" class="block hover:opacity-100">Clientes</a>
-                <a href="{{ route('drivers.index') }}" class="block hover:opacity-100">Motoristas</a>
-                <a href="#" class="block hover:opacity-100">Estatísticas</a>
-                <a href="{{ route('vehicles.index') }}" class="block text-white opacity-100 font-bold bg-purple-800 -mx-6 px-6 py-2 border-l-4 border-l-orange-400">Veículos</a>
-                <a href="#" class="block hover:opacity-100">Viagens</a>
-                <a href="#" class="block hover:opacity-100">Contratos</a>
-                <a href="#" class="block hover:opacity-100">Pacotes</a>
-            </nav>
+    <aside class="w-full md:w-64 bg-purple-900 text-white p-6 flex flex-col">
+        <div class="flex items-center justify-center space-x-5 mb-8">
+            <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-24">
+        </div>
+        <nav class="space-y-4 text-sm font-medium opacity-80">
+            <a href="{{ route('dashboard') }}" class="block hover:opacity-100">Dashboard</a>
+            <a href="#" class="block hover:opacity-100">Clientes</a>
+            <a href="{{ route('drivers.index') }}" class="block hover:opacity-100">Motoristas</a>
+            <a href="#" class="block hover:opacity-100">Estatísticas</a>
+            <a href="{{ route('vehicles.index') }}" class="block text-white opacity-100 font-bold bg-purple-800 -mx-6 px-6 py-2 border-l-4 border-l-orange-400">Veículos</a>
+            <a href="#" class="block hover:opacity-100">Viagens</a>
+            <a href="#" class="block hover:opacity-100">Contratos</a>
+            <a href="#" class="block hover:opacity-100">Pacotes</a>
+        </nav>
         </div>
     </aside>
 
@@ -61,9 +60,9 @@
         </div>
         @endif
 
-        <main class="p-6 flex-1 grid grid-cols-3 gap-6">
-            <div class="col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                <table class="w-full text-left text-xs">
+        <main class="p-4 md:p-6 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="col-span-1 lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                <table class="w-full text-left text-xs min-w-[600px]">
                     <thead>
                         <tr class="bg-gray-50 border-b border-gray-100 text-gray-400 font-bold">
                             <th class="p-4">Prefixo</th>
@@ -142,7 +141,7 @@
                             </div>
                             <div>
                                 <label class="block text-[10px] uppercase font-bold text-gray-400">Ano:</label>
-                                <input type="text" name="year" required     placeholder="2006" class="w-full border border-gray-200 rounded px-2 py-1.5 text-xs mt-0.5">
+                                <input type="text" name="year" required placeholder="2006" class="w-full border border-gray-200 rounded px-2 py-1.5 text-xs mt-0.5">
                             </div>
                         </div>
 

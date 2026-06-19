@@ -7,9 +7,9 @@
     <title>COINPEL | Dashboard</title>
 </head>
 
-<body class="bg-gray-50 h-screen flex">
+<body class="bg-gray-50 min-h-screen flex flex-col md:flex-row">
 
-    <aside class="w-64 bg-purple-900 text-white p-6">
+    <aside class="w-full md:w-64 bg-purple-900 text-white p-6 flex flex-col">
         <div class="flex items-center justify-center space-x-5 mb-8">
             <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-24">
         </div>

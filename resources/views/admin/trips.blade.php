@@ -4,9 +4,9 @@
     <meta charset="UTF-8"><title>COINPEL - Viagens</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans antialiased flex">
+<body class="bg-gray-50 font-sans antialiased flex flex-col md:flex-row min-h-screen">
 
-    <aside class="w-64 bg-purple-900 text-white min-h-screen p-6 flex flex-col justify-between">
+    <aside class="w-full md:w-64 bg-purple-900 text-white min-h-screen p-6 flex flex-col justify-between md:min-h-screen">
         <div>
             <div class="flex items-center justify-center space-x-5 mb-8">
                 <img src="{{ asset('img/coinpellogobranco.png') }}" alt="COINPEL Logo" class="h-24">
@@ -33,7 +33,7 @@
             </div>
         </header>
 
-        <main class="p-8 max-w-4xl mx-auto w-full bg-white rounded-xl shadow-sm border border-gray-100 mt-6">
+        <main class="p-4 sm:p-8 max-w-4xl mx-auto w-full bg-white rounded-xl shadow-sm border border-gray-100 mt-6">
             <div class="text-center mb-8">
                 <h2 class="text-xl font-bold text-gray-800">Pelotas <span class="text-purple-900 mx-2">➔</span> Gramado</h2>
             </div>
