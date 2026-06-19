@@ -35,7 +35,13 @@
         </header>
 
         @if(session('success'))
-        <div class="mx-6 mt-4 p-3 bg-green-100 text-green-800 rounded font-bold text-xs">
+        <div class="mx-6 mt-4 p-3 bg-green-100 text-green-800 rounded font-bold text-xs border border-green-200">
+            {{ session('success') }}
+        </div>
+        @endif
+
+        @if($errors->any())
+        <div class="mx-6 mt-4 p-3 bg-red-100 text-red-800 rounded font-bold text-xs border border-red-200">
             <p class="font-bold mb-1">O cadastro foi recusado pelos seguintes motivos:</p>
             <ul class="list-disc pl-4 space-y-0.5 font-normal text-red-700">
                 @foreach($errors->all() as $error)
@@ -80,7 +86,7 @@
                             <div class="grid grid-cols-2 gap-2">
                                 <div>
                                     <label class="block text-[10px] font-bold text-gray-400">Data de nascimento:</label>
-                                    <input type="text" name="birth_date" placeholder="dd/mm/aaaa" class="w-full border border-gray-200 rounded px-2 py-1.5 mt-0.5">
+                                    <input type="date" name="birth_date" placeholder="dd/mm/aaaa" class="w-full border border-gray-200 rounded px-2 py-1.5 mt-0.5">
                                 </div>
                                 <div>
                                     <label class="block text-[10px] font-bold text-gray-400">CNH:</label>
